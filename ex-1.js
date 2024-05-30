@@ -82,3 +82,19 @@ let orders = [
 ];
 
 // Start coding here
+function findHighestTotalPurchase(orders) {
+  let maxOrder = orders[0];
+  let maxTotalPurchase = orders[0].productPrice * orders[0].productQuantity;
+
+  for (let order of orders) {
+    let totalPurchase = order.productPrice * order.productQuantity;
+    if (totalPurchase > maxTotalPurchase) {
+      maxTotalPurchase = totalPurchase;
+      maxOrder = order;
+    }
+  }
+
+  return maxOrder;
+};
+let maxOrder = findHighestTotalPurchase(orders);
+console.log(maxOrder);

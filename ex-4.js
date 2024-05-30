@@ -82,3 +82,15 @@ let orders = [
 ];
 
 // Start coding here
+function calculateTotalOrderPrices(orders) {
+  let totalOrderPrices = 0;
+
+  for (let order of orders) {
+    totalOrderPrices += order.productPrice * order.productQuantity;
+  }
+
+  return totalOrderPrices;
+}
+
+let totalOrderPrices = calculateTotalOrderPrices(orders);
+console.log(`Total-order-prices : ${totalOrderPrices.toLocaleString()} Baht`);
